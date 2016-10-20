@@ -18,7 +18,7 @@
        pyplot ufspec model     - 
    
  - Accepts the following extra arguments:
-       ~ "param" - plots param against spec number if one param number is given
+       -- "param" - plots param against spec number if one param number is given
                    or against another parameter, if two are given (x then y). 
                    Also plots against count rate (0), flux (-1) and intrinsic 
                    flux (-2) if the first param number is set as shown in 
@@ -35,13 +35,13 @@
         pyplot param -1 2     - plot spectrum flux (x) against photon index (y)
         pyplot param -2 3 2 1 - plot intrinsic power law flux (x) against 
                                 absorbing column (y)
-       ~ "colour" - plots a colour-colour plot of the fluxes of each spectrum
+       -- "colour" - plots a colour-colour plot of the fluxes of each spectrum
                     as folded through the current model. Requires four energy
                     limit arguments. E.g. for a 0.5-2 v. 2-10 keV colour plot:
 
         pyplot colour 0.5 2.0 2.0 10.0
 
-       ~ "hardness" - plots the hardnesses v. fluxes of each spectrum, as
+       -- "hardness" - plots the hardnesses v. fluxes of each spectrum, as
                       folded through the current model. Requires four energy
                       limit arguments. E.g. for a 0.5-2/2-10 keV hardness v.
                       0.5-2 keV flux plot:
