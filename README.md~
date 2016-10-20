@@ -49,7 +49,7 @@
         pyplot hardness 0.5 2.0 2.0 10.0
 
 
- multiparam - change a model parameter for all spectra simultaneously
+##multiparam - change a model parameter for all spectra simultaneously
 
  - Accepts a parameter number (as numbered for the first spectrum) and a value
    to which this parameter will be set for all spectra. Also allows freezing,
@@ -62,7 +62,7 @@
        multiparam 2 =2     - Set parameter 2 equal that that of the first 
                              spectrum for all spectra
 
- saveparam - save the values and errors of two parameters to file
+##saveparam - save the values and errors of two parameters to file
 
  - Requires the numbers of the two parameters to be written to a text file as 
    an argument. Also saves one parameter with count rate (0), flux (-1), 
@@ -92,7 +92,7 @@
                                           in the file "params.dat"
 
 
- extractabs - save the flux and absorption fraction of each spectrum
+##extractabs - save the flux and absorption fraction of each spectrum
 
  - Takes a single argument giving the component number of the absorption
    component whose effect is to be extracted. The fractional change in the
@@ -105,11 +105,9 @@
        extractabs 1 'abs.dat' - save the absorption fraction and flux in the 
                                 file 'abs.dat'
 
-xspecPlot.py
+## Python scripts used by multispec.tcl
 
-Created on Wed Sep  9 14:55:02 2015
-
-By Sam Connolly
+###xspecPlot.py
 
 Used to plot things in xspec. Takes argument specifiers then the data
 as arguments, saves these arguments to a text file. Assumes two data sets with
@@ -125,11 +123,7 @@ xspecSave.py x [xvals] y [yvals] xe [xerrvals]  \
 xspecPlot.py x $XVALS y $YVALS \
               xl $XLABEL yl $YLABEL xe $XERRS ye $YERRS xm $XMOD ym $YMOD $LOG
 
-xspecSave.py
-
-Created on Wed Sep  9 14:55:02 2015
-
-By Sam Connolly
+###xspecSave.py
 
 Used to save data from xspec that xspec. Takes argument specifiers then the data
 as arguments, saves these arguments to a text file. Assumes two data sets with

@@ -1,8 +1,8 @@
 
 # Multispec
 
-##Multispec.tcl - tools to aid simultaneous fitting of multiple spectra       
-                  in xspec                                                    
+##Multispec.tcl - tools to aid simultaneous fitting of multiple spectra in xspec      
+                                                                      
 ###Sam Connolly, October 2016                                                  
 
 
