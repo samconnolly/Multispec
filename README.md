@@ -5,7 +5,7 @@
                                                                       
 ####Sam Connolly, October 2016                                                  
 
-As set of commands designed to speed up simultaneous fitting of large numbers of
+A set of commands designed to speed up simultaneous fitting of large numbers of
 spectra, e.g. by simultaneously changing a particular model parameter. Also
 includes some tools useful for comparison of fitted parameters between spectra
 by plotting them against one another or the spectra's fluxes etc., or save these
