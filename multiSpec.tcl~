@@ -8,7 +8,7 @@
 ################################################################################
 
 # Python file locations
-set PYSCRIPT_ROUTE /route/to/scripts
+set PYSCRIPT_ROUTE /data/sdc1g08/HDData/code/pythonprogs/terminal/
 
 # pyplot - plot using matplotlib
 #

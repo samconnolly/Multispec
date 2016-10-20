@@ -1,21 +1,39 @@
 
 # Multispec
 
-##Multispec.tcl - tools to aid simultaneous fitting of multiple spectra in xspec      
+##Tools to aid simultaneous fitting of multiple spectra in xspec      
                                                                       
-###Sam Connolly, October 2016                                                  
+####Sam Connolly, October 2016                                                  
+
+As set of commands designed to speed up simultaneous fitting of large numbers of
+spectra, e.g. by simultaneously changing a particular model parameter. Also
+includes some tools useful for comparison of fitted parameters between spectra
+by plotting them against one another or the spectra's fluxes etc., or save these
+values to a txt file.
+
+####Preperation for use
+
+Download the three script files (multiSpec.tcl, xspecPlot.py and xspecSave.py)
+and save in a folder together. Before use, change the 'PYSCRIPT_ROUTE' variable
+to the path to this folder. To import the commands in xspec, use 
+'@/path/to/multispec.tcl' as normal. To setup xspec to always load the commands
+on startup, set an alias in your .cshrc/.bashrc file to run the command
+'xspec - /path/to/multispec.tcl'.
 
 
 
-##pyplot - plot using matplotlib
+##Multispec.tcl
+
+###pyplot - plot using matplotlib
 
  - Accepts standard plot arguments "ldata", "lcounts", "ufspec", "eufspec", 
    "eeufspec", "ratio", "residuals". The extra argument "model" can be used
    with "ufspec", "eufspec" and "eeufspec" to overplot the model in addtion
    to the data. E.g.:
 
-       pyplot ldata            - logarithmic plot of the data
-       pyplot ufspec model     - 
+        pyplot ldata 1         - logarithmic plot of the data
+        pyplot ufspec model 1  - plot of the folded spectrum and fitted model 
+                                 of spectrum 1
    
  - Accepts the following extra arguments:
 
@@ -50,7 +68,7 @@
         pyplot hardness 0.5 2.0 2.0 10.0
 
 
-##multiparam - change a model parameter for all spectra simultaneously
+###multiparam - change a model parameter for all spectra simultaneously
 
  - Accepts a parameter number (as numbered for the first spectrum) and a value
    to which this parameter will be set for all spectra. Also allows freezing,
@@ -63,7 +81,7 @@
         multiparam 2 =2     - Set parameter 2 equal that that of the first 
                              spectrum for all spectra
 
-##saveparam - save the values and errors of two parameters to file
+###saveparam - save the values and errors of two parameters to file
 
  - Requires the numbers of the two parameters to be written to a text file as 
    an argument. Also saves one parameter with count rate (0), flux (-1), 
@@ -93,7 +111,7 @@
                                           in the file "params.dat"
 
 
-##extractabs - save the flux and absorption fraction of each spectrum
+###extractabs - save the flux and absorption fraction of each spectrum
 
  - Takes a single argument giving the component number of the absorption
    component whose effect is to be extracted. The fractional change in the
@@ -127,9 +145,7 @@ Optional 'fname' specifier to allow filename to be specified. E.g.:
 Used to save data from xspec that xspec. Takes argument specifiers then the data
 as arguments, saves these arguments to a text file. Assumes two data sets with
 asymmetrical errors, as that's what xspec provides. Optional 'fname' specifier
-to allow filename to be specified.
-
-e.g.
+to allow filename to be specified. E.g.:
 
         xspecSave.py x [xvals] y [yvals] xerr1 [xerrvals1] xerr2 [xerrvals2]  \
                 yerr1 [yerrvals1] yerr2 [yerrvals2] fname "filename.dat"
