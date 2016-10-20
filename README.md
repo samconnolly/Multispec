@@ -5,11 +5,10 @@
                                                                       
 ####Sam Connolly, October 2016                                                  
 
-A set of commands designed to speed up simultaneous fitting of large numbers of
-spectra, e.g. by simultaneously changing a particular model parameter. Also
-includes some tools useful for comparison of fitted parameters between spectra
-by plotting them against one another or the spectra's fluxes etc., or save these
-values to a txt file.
+A set of commands designed to speed up loading, manipulation and analysis of large numbers of
+spectra when carrying out simultaneous fitting, e.g. simultaneously changing a particular model parameter,
+plotting multiple spectra's parameters against one another or the spectra's fluxes, save these
+values to a txt file etc.
 
 ####Preperation for use
 
@@ -150,3 +149,15 @@ to allow filename to be specified. E.g.:
 
         xspecSave.py x [xvals] y [yvals] xerr1 [xerrvals1] xerr2 [xerrvals2]  \
                 yerr1 [yerrvals1] yerr2 [yerrvals2] fname "filename.dat"
+
+## External python scripts
+
+### specLoad.py
+
+Automatically load all the spectra whose filenames fit a given pattern in the 
+current directory. Takes one optional argument specifying the filename filter 
+for the files to be loaded, otherwise uses the default filter "*grp*pha". E.g.:
+
+    specLoad.py "*spec*pha" - load all files containing "spec" and ending in "pha"
+
+Can also be set to load the multispec commands after loading the spectra - see comments in code.
